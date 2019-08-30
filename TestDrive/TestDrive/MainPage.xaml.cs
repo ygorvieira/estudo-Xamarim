@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TestDrive.Models;
 using Xamarin.Forms;
 
@@ -25,6 +21,13 @@ namespace TestDrive
             };
 
             BindingContext = this;
+        }
+
+        private void ListViewVeiculos_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var veiculo = (Veiculo)e.Item;
+
+            DisplayAlert("Test Drive", string.Format("Você selecionou o modelo '{0}', que custa {1}", veiculo.Nome, veiculo.PrecoFormatado), "OK");
         }
     }
 }

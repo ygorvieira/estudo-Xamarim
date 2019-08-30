@@ -4,5 +4,9 @@
     {
         public string Nome { get; set; }
         public decimal Preco { get; set; }
+        public string PrecoFormatado
+        {
+            get { return string.Format("R$ {0}", Preco); }
+        }
     }
 }
